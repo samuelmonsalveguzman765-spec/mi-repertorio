@@ -1,0 +1,35 @@
+/* styles.css - Estilos básicos y responsivos */
+:root{
+  --max-width: 900px;
+  --accent: #2b6cb0;
+  --muted: #6b7280;
+  --bg: #f7fafc;
+}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Helvetica, Arial, sans-serif;background:var(--bg);color:#111;margin:0;padding:24px}
+.container{max-width:var(--max-width);margin:0 auto;background:#fff;padding:24px;border-radius:8px;box-shadow:0 6px 20px rgba(17,24,39,0.08)}
+.site-header h1{margin:0 0 6px;font-size:1.6rem}
+.lead{margin:0 0 18px;color:var(--muted)}
+fieldset{border:1px solid #e6edf3;padding:16px;border-radius:6px;margin-bottom:16px}
+legend{font-weight:600}
+.field{display:block;margin-bottom:12px}
+.label-text{display:block;margin-bottom:6px;font-size:0.95rem}
+input[type="text"],input[type="email"],input[type="tel"],textarea{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;font-size:0.95rem}
+.checkbox{display:flex;align-items:center;margin-bottom:8px}
+.checkbox input{margin-right:10px}
+.hint{color:var(--muted);font-size:0.9rem;margin:8px 0}
+.actions{display:flex;gap:10px;align-items:center}
+.btn{padding:10px 14px;border-radius:6px;border:1px solid #cbd5e1;background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+.summary{border:1px dashed #cbd5e1;padding:14px;border-radius:6px;margin-top:16px;background:#fbfdff}
+.hidden{display:none}
+.site-footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center}
+@media (min-width:700px){
+  .field{display:flex;gap:12px;align-items:center}
+  .label-text{width:160px;margin-bottom:0}
+  input[type="text"],input[type="email"],input[type="tel"],textarea{width:calc(100% - 160px)}
+}
+@media (max-width:420px){
+  body{padding:12px}
+  .container{padding:16px}
+}
