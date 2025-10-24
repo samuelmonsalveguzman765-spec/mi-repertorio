@@ -3,49 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Busca Minas — Mini juego</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Bad Time — Mini Simulator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Busca Minas — Mini juego</h1>
-        <p class="lead">Encuentra todas las casillas sin minas. ¡Buena suerte!</p>
-      </div>
-      <div class="controls">
-        <label>Filas <input id="rows" type="number" min="5" max="20" value="8"></label>
-        <label>Columnas <input id="cols" type="number" min="5" max="20" value="8"></label>
-        <label>Minas <input id="mines" type="number" min="1" value="10"></label>
-        <button id="startBtn">Iniciar / Reiniciar</button>
-      </div>
-    </header>
+  <header>
+    <h1>Bad Time — Mini Simulator</h1>
+    <div class="controls">Mov: ← → ↑ ↓  o WASD • Pause: P • Reiniciar: R</div>
+  </header>
 
-    <div class="topline">
-      <div class="status">
-        <div class="pill">Minas restantes: <span id="minesLeft">0</span></div>
-        <div class="pill">Estado: <span id="gameState">Listo</span></div>
-        <div class="pill">Tiempo: <span id="timer">0</span>s</div>
-      </div>
-    </div>
+  <main>
+    <canvas id="gameCanvas" width="640" height="480"></canvas>
 
-    <main>
-      <div class="left">
-        <div id="board" class="board"></div>
+    <aside class="hud">
+      <div>Vida: <span id="hp">10</span></div>
+      <div>Tiempo: <span id="time">0.00</span>s</div>
+      <div>Puntuación: <span id="score">0</span></div>
+      <div class="buttons">
+        <button id="btnPause">Pausa</button>
+        <button id="btnRestart">Reiniciar</button>
       </div>
-      <aside class="right">
-        <div class="instructions">
-          <strong>Instrucciones</strong>
-          <ol>
-            <li>Haz clic izquierdo en una casilla para descubrirla.</li>
-            <li>Haz clic derecho en una casilla para poner una bandera ⚑.</li>
-            <li>Si tocas una mina 💣, pierdes.</li>
-            <li>Los números indican cuántas minas hay alrededor.</li>
-          </ol>
-        </div>
-      </aside>
-    </main>
-  </div>
+      <p class="hint">Sobrevive el mayor tiempo posible. Algunos ataques tienen patrones — memorízalos.</p>
+    </aside>
+  </main>
+
+  <footer>
+    Creado como demo en HTML/CSS/JS • Inspirado en Undertale (fan made)
+  </footer>
 
   <script src="script.js"></script>
 </body>
