@@ -1,28 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Majo 💖</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Busca Minas — Mini juego</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>💘 Para María José 💘</h1>
-    <p class="intro">Hola, Majo. Esta página es solo para ti, porque haces que cada día sea especial 💕</p>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Busca Minas — Mini juego</h1>
+        <p class="lead">Encuentra todas las casillas sin minas. ¡Buena suerte!</p>
+      </div>
+      <div class="controls">
+        <label>Filas <input id="rows" type="number" min="5" max="20" value="8"></label>
+        <label>Columnas <input id="cols" type="number" min="5" max="20" value="8"></label>
+        <label>Minas <input id="mines" type="number" min="1" value="10"></label>
+        <button id="startBtn">Iniciar / Reiniciar</button>
+      </div>
+    </header>
 
-    <button id="mensajeBtn">Ver mensaje secreto 💌</button>
-
-    <div id="mensaje" class="oculto">
-      <p>
-        Desde que llegaste, todo cambió.<br />
-        Tu sonrisa ilumina mis días 🌞,<br />
-        y tus palabras hacen que el mundo sea más bonito 💫.
-      </p>
-      <p>💖 Gracias por ser tú, Majo 💖</p>
+    <div class="topline">
+      <div class="status">
+        <div class="pill">Minas restantes: <span id="minesLeft">0</span></div>
+        <div class="pill">Estado: <span id="gameState">Listo</span></div>
+        <div class="pill">Tiempo: <span id="timer">0</span>s</div>
+      </div>
     </div>
 
-    <div id="corazones"></div>
+    <main>
+      <div class="left">
+        <div id="board" class="board"></div>
+      </div>
+      <aside class="right">
+        <div class="instructions">
+          <strong>Instrucciones</strong>
+          <ol>
+            <li>Haz clic izquierdo en una casilla para descubrirla.</li>
+            <li>Haz clic derecho en una casilla para poner una bandera ⚑.</li>
+            <li>Si tocas una mina 💣, pierdes.</li>
+            <li>Los números indican cuántas minas hay alrededor.</li>
+          </ol>
+        </div>
+      </aside>
+    </main>
   </div>
 
   <script src="script.js"></script>
